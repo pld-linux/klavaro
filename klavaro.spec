@@ -7,6 +7,8 @@ License:	GPL v2
 Group:		Applications/Text
 Source0:	http://dl.sourceforge.net/klavaro/%{name}-%{version}.tar.gz
 # Source0-md5:	57cd5a896e406b979e1a261085d61e70
+Source1:	%{name}.desktop
+Source2:	%{name}.png
 URL:		http://klavaro.sourceforge.net/en/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -35,8 +37,13 @@ bezwzrokowego na klawiaturze.
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -49,3 +56,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_mandir}/man1/*
+%{_desktopdir}/%{name}.desktop
+%{_pixmapsdir}/%{name}.png

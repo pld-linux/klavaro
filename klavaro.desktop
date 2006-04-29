@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Klavaro
+Comment=Touch typing tutor
+Exec=klavaro
+Type=Application
+Terminal=false
+Encoding=UTF-8
+Categories=GTK;Education;
+Icon=klavaro.png
+# vi: encoding=utf-8
