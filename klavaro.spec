@@ -6,6 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		Applications/Text
 Source0:	http://dl.sourceforge.net/klavaro/%{name}-%{version}.tar.gz
+# Source0-md5:	57cd5a896e406b979e1a261085d61e70
 URL:		http://klavaro.sourceforge.net/en/
 BuildRequires:	autoconf
 BuildRequires:	automake
