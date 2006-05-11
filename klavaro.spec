@@ -12,7 +12,8 @@ Source2:	%{name}.png
 URL:		http://klavaro.sourceforge.net/en/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel >= 2.6.2
+BuildRequires:	gtk+2-devel >= 2:2.6.2
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,7 +37,6 @@ bezwzrokowego na klawiaturze.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 
 %{__make} install \
@@ -45,12 +45,18 @@ install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
+mv $RPM_BUILD_ROOT%{_datadir}/locale/{cs_CZ,cs}
+mv $RPM_BUILD_ROOT%{_datadir}/locale/{de_DE,de}
+mv $RPM_BUILD_ROOT%{_datadir}/locale/{eo_EO,eo}
+mv $RPM_BUILD_ROOT%{_datadir}/locale/{fr_FR,fr}
+mv $RPM_BUILD_ROOT%{_datadir}/locale/{hu_HU,hu}
+mv $RPM_BUILD_ROOT%{_datadir}/locale/{sv_SE,sv}
 %find_lang %{name} --with-gnome --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f klavaro.lang
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
