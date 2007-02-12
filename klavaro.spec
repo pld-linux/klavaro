@@ -1,5 +1,5 @@
 Summary:	Touch typing tutor program
-Summary(pl):	Program do nauki pisania bezwzrokowego na klawiaturze
+Summary(pl.UTF-8):   Program do nauki pisania bezwzrokowego na klawiaturze
 Name:		klavaro
 Version:	0.9.9
 Release:	1
@@ -20,8 +20,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Klavaro is a program that teachs you to touch type and/or helps you to
 improve your skills with the keyboard.
 
-%description -l pl
-Klavaro jest programem do nauki i/lub poprawy umiejêtno¶ci pisania
+%description -l pl.UTF-8
+Klavaro jest programem do nauki i/lub poprawy umiejÄ™tnoÅ›ci pisania
 bezwzrokowego na klawiaturze.
 
 %prep
