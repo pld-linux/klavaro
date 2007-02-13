@@ -1,5 +1,5 @@
 Summary:	Touch typing tutor program
-Summary(pl.UTF-8):   Program do nauki pisania bezwzrokowego na klawiaturze
+Summary(pl.UTF-8):	Program do nauki pisania bezwzrokowego na klawiaturze
 Name:		klavaro
 Version:	0.9.9
 Release:	1
