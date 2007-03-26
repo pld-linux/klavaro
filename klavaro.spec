@@ -1,3 +1,8 @@
+# TODO:
+#	- does not build:
+#	mv: cannot stat `/home/users/darekr/tmp/klavaro-0.9.9-root-darekr/usr/share/locale/cs_CZ': 
+#	No such file or directory	
+#	- updated to 1.0.2
 Summary:	Touch typing tutor program
 Summary(pl.UTF-8):	Program do nauki pisania bezwzrokowego na klawiaturze
 Name:		klavaro
@@ -9,6 +14,7 @@ Source0:	http://dl.sourceforge.net/klavaro/%{name}-%{version}.tar.gz
 # Source0-md5:	2f8b79dbe3e94dcca8646576afeb2325
 Source1:	%{name}.desktop
 Source2:	%{name}.png
+Patch0:		%{name}-lc_numeric.patch
 URL:		http://klavaro.sourceforge.net/en/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -26,6 +32,7 @@ bezwzrokowego na klawiaturze.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__aclocal} -I m4
