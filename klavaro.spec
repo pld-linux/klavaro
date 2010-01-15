@@ -12,6 +12,8 @@ Source2:	%{name}.png
 URL:		http://klavaro.sourceforge.net/en/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	curl-devel
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.6.2
 BuildRequires:	gtkdatabox-devel
 BuildRequires:	pkgconfig
@@ -51,20 +53,18 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-
 %post
 %update_icon_cache hicolor
 
 %postun
 %update_icon_cache hicolor
 
-
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/klavaro
 %{_datadir}/%{name}
-%{_mandir}/man1/*
+%{_mandir}/man1/klavaro.1*
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.png
-%{_iconsdir}/hicolor/*/*/*
+%{_iconsdir}/hicolor/*/*/klavaro.png
