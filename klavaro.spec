@@ -2,10 +2,10 @@ Summary:	Touch typing tutor program
 Summary(pl.UTF-8):	Program do nauki pisania bezwzrokowego na klawiaturze
 Name:		klavaro
 Version:	1.4.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/Text
-Source0:	http://dl.sourceforge.net/klavaro/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/klavaro/%{name}-%{version}.tar.bz2
 # Source0-md5:	a568aecd05f8eeb8a40c95fcf6de43d0
 Source1:	%{name}.desktop
 Source2:	%{name}.png
@@ -17,6 +17,8 @@ BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.6.2
 BuildRequires:	gtkdatabox-devel
 BuildRequires:	pkgconfig
+Requires(post,postun):	gtk-update-icon-cache
+Requires(post,postun):	hicolor-icon-theme
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
