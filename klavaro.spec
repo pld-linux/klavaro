@@ -13,7 +13,7 @@ URL:		http://klavaro.sourceforge.net/en/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	curl-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+2-devel >= 2:2.6.2
 BuildRequires:	gtkdatabox-devel
 BuildRequires:	pkgconfig
